@@ -13,7 +13,7 @@ reader.on("line", (l: string) => {
 });
 
 function compareNumbers(a: number, b: number) {
-  return a - b;
+  return b - a;
 }
 
 reader.on("close", () => {
@@ -33,7 +33,6 @@ reader.on("close", () => {
   let totalCals: number = 0;
   totalCals = topElves
     .sort(compareNumbers)
-    .reverse()
     .slice(0, 3)
     .reduce(
       (accumulator, currentValue) => accumulator + currentValue,
